@@ -10,6 +10,21 @@ import java.util.UUID;
 @Table(name = "tasks")
 public class Task {
 
+    public Task() {
+    }
+
+    public Task(UUID id, String title, String description, LocalDate dueDate, TaskStatus status, TaskPriority priority, Instant created, Instant updated) {
+
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.status = status;
+        this.priority = priority;
+        this.created = created;
+        this.updated = updated;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", updatable = false, nullable = false)
